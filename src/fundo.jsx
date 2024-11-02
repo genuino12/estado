@@ -1,9 +1,9 @@
-import React, {estagio} from 'react';
+import React, { useState } from 'react'; 
 
-function fundo({ onColorChange }) {
-  const [color, setColor] = estagio('#ffffff');
+function Fundo({ onColorChange }) {
+  const [color, setColor] = useState('#ffffff');
 
-  const intendificar = (e) => {
+  const handleColorChange = (e) => {
     setColor(e.target.value);
     onColorChange(e.target.value);
   };
@@ -12,10 +12,10 @@ function fundo({ onColorChange }) {
     <div>
       <label>
         Background Color:
-        <input type="color" value={color} onChange={intendificar} />
+        <input type="color" value={color} onChange={handleColorChange} />
       </label>
     </div>
   );
 }
 
-export default fundo;
+export default Fundo;
